@@ -28,4 +28,8 @@ public class UsuarioService {
 	public Usuario atualizarUsuario(Usuario usuario) {
 		return usuarioRepository.save(usuario);
 	}
+	
+	public void deletarUsuario(Usuario usuario) {
+		usuarioRepository.delete(usuario);
+	}
 }
