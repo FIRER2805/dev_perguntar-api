@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import dw.backend.api.model.Entity.Usuario;
 import dw.backend.api.model.repository.UsuarioRepository;
+import jakarta.transaction.Transactional;
 
 @Service
 public class UsuarioService {
@@ -24,7 +25,7 @@ public class UsuarioService {
 	public Usuario inserirUsuario(Usuario usuario) {
 		return usuarioRepository.save(usuario);
 	}
-
+	
 	public Usuario atualizarUsuario(Usuario usuario) {
 		return usuarioRepository.save(usuario);
 	}
