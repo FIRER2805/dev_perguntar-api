@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import dw.backend.api.model.Entity.Usuario;
+import dw.backend.api.model.seletor.UsuarioSeletor;
 import dw.backend.api.service.UsuarioService;
 
 @RequestMapping("/api/usuarios")
@@ -21,6 +22,12 @@ import dw.backend.api.service.UsuarioService;
 public class UsuarioController {
 	@Autowired
 	public UsuarioService usuarioService;
+	
+	@PostMapping("/filtro")
+	public List<Usuario> listarComSeletor(@RequestBody UsuarioSeletor seletor)
+	{
+		return usuarioService.listarComSeletor(seletor);
+	}
 	
 	@GetMapping
 	public List<Usuario> buscaTodosUsuarios()
